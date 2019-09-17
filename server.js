@@ -8,11 +8,6 @@ app.get('/', (req, res, next)=>{
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// app.get('/api/pokemon', (req, res, next)=>{
-//   db.models.Pokemon.findAll()
-//     .then(pokemon => res.send(pokemon))
-//     .catch(next)
-// })
 
 app.use('/api', require('./api'));
 

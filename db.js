@@ -57,12 +57,12 @@ const syncAndSeed = async ()=>{
     Type.create({ type: 'none'})
   ])
 
-  const [ pikachu, eevee, tyranitar, lucario, gardivar, metagross, garchomp, salamance, electravire, charizard, mewtwo, machamp, gangar, butterfree, infernape, beartic, golem, lanturn, zarrena ] = await Promise.all([
+  const [ pikachu, eevee, tyranitar, lucario, gardevior, metagross, garchomp, salamance, electravire, charizard, mewtwo, machamp, gangar, butterfree, infernape, beartic, golem, lanturn, zarrena, volcarona, swampert ] = await Promise.all([
     Pokemon.create({name: 'Pikachu', type01Id: electric.id, type02Id: none.id}),
     Pokemon.create({name: 'Eevee', type01Id: normal.id, type02Id: none.id}),
     Pokemon.create({name: 'Tyranitar', type01Id: rock.id, type02Id: dark.id}),
     Pokemon.create({name: 'Lucario', type01Id: steel.id, type02Id: fighting.id}),
-    Pokemon.create({name: 'Gardivar', type01Id: psychic.id, type02Id: fairy.id}),
+    Pokemon.create({name: 'Gardevior', type01Id: psychic.id, type02Id: fairy.id}),
     Pokemon.create({name: 'Metagross', type01Id: steel.id, type02Id: psychic.id}),
     Pokemon.create({name: 'Garchomp', type01Id: dragon.id, type02Id: ground.id}),
     Pokemon.create({name: 'Salamance', type01Id: dragon.id, type02Id: flying.id}),
@@ -76,7 +76,8 @@ const syncAndSeed = async ()=>{
     Pokemon.create({name: 'Beartic', type01Id: ice.id, type02Id: none.id}),
     Pokemon.create({name: 'Golem', type01Id: rock.id, type02Id: ground.id}),
     Pokemon.create({name: 'Lanturn', type01Id: water.id, type02Id: electric.id }),
-    Pokemon.create({name: 'Zarrena', type01Id: grass.id, type02Id: none.id })
+    Pokemon.create({name: 'Zarrena', type01Id: grass.id, type02Id: none.id }),    Pokemon.create({name: 'Volcarona', type01Id: bug.id, type02Id: fire.id }),
+    Pokemon.create({name: 'Swampert', type01Id: water.id, type02Id: ground.id })
   ])
 
 };

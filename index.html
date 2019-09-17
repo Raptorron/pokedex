@@ -1,0 +1,45 @@
+<html>
+  <head>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+      <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+      <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/react-router-dom/5.0.1/react-router-dom.js'></script>
+      <link href="https://fonts.googleapis.com/css?family=Oswald:200&display=swap" rel="stylesheet">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const { Component } = React;
+      const { render } = ReactDOM;
+      const { Route, HashRouter, Link, Switch, Redirect, NavLink } = ReactRouterDOM;
+      const root = document.querySelector('#root');
+
+      class App extends Component{
+        constructor(){
+          super();
+          this.state={
+            pokemons: [],
+            types: []
+          }
+        }
+        anync componentDidMount(){
+          const responses = await Promise.all([fetch('/api/pokemon'), fetch('/api/type')]);
+          const [ pokemons, types ] = await Promise.all(responses.map(response => response.json()));
+          this.setState({pokemons, types})
+        }
+        render(){
+          const {pokemons, types} = this.state;
+          return (
+            <hr />
+          )
+        }
+      }
+
+      render(<App />, root);
+    </script>
+  </body>
+</html>

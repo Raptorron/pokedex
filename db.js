@@ -58,26 +58,27 @@ const syncAndSeed = async ()=>{
   ])
 
   const [ pikachu, eevee, tyranitar, lucario, gardevior, metagross, garchomp, salamance, electravire, charizard, mewtwo, machamp, gangar, butterfree, infernape, beartic, golem, lanturn, zarrena, volcarona, swampert ] = await Promise.all([
-    Pokemon.create({name: 'Pikachu', type01Id: electric.id, type02Id: none.id}),
-    Pokemon.create({name: 'Eevee', type01Id: normal.id, type02Id: none.id}),
-    Pokemon.create({name: 'Tyranitar', type01Id: rock.id, type02Id: dark.id}),
-    Pokemon.create({name: 'Lucario', type01Id: steel.id, type02Id: fighting.id}),
-    Pokemon.create({name: 'Gardevior', type01Id: psychic.id, type02Id: fairy.id}),
-    Pokemon.create({name: 'Metagross', type01Id: steel.id, type02Id: psychic.id}),
-    Pokemon.create({name: 'Garchomp', type01Id: dragon.id, type02Id: ground.id}),
-    Pokemon.create({name: 'Salamance', type01Id: dragon.id, type02Id: flying.id}),
-    Pokemon.create({name: 'Electravire', type01Id: electric.id, type02Id: none.id}),
-    Pokemon.create({name: 'Charizard', type01Id: fire.id, type02Id: flying.id}),
-    Pokemon.create({name: 'Mewtwo', type01Id: psychic.id, type02Id: none.id}),
-    Pokemon.create({name: 'Machamp', type01Id: fighting.id, type02Id: none.id}),
-    Pokemon.create({name: 'Gangar', type01Id: ghost.id, type02Id: poison.id}),
-    Pokemon.create({name: 'Butterfree', type01Id: bug.id, type02Id: flying.id}),
-    Pokemon.create({name: 'Infernape', type01Id: fire.id, type02Id: fighting.id}),
-    Pokemon.create({name: 'Beartic', type01Id: ice.id, type02Id: none.id}),
-    Pokemon.create({name: 'Golem', type01Id: rock.id, type02Id: ground.id}),
-    Pokemon.create({name: 'Lanturn', type01Id: water.id, type02Id: electric.id }),
-    Pokemon.create({name: 'Zarrena', type01Id: grass.id, type02Id: none.id }),    Pokemon.create({name: 'Volcarona', type01Id: bug.id, type02Id: fire.id }),
-    Pokemon.create({name: 'Swampert', type01Id: water.id, type02Id: ground.id })
+    Pokemon.create({name: 'Pikachu', typeId: electric.id}),
+    Pokemon.create({name: 'Eevee', typeId: normal.id}),
+    Pokemon.create({name: 'Tyranitar', typeId: rock.id}),
+    Pokemon.create({name: 'Lucario', typeId: steel.id}),
+    Pokemon.create({name: 'Gardevior', typeId: psychic.id}),
+    Pokemon.create({name: 'Metagross', typeId: steel.id}),
+    Pokemon.create({name: 'Garchomp', typeId: dragon.id}),
+    Pokemon.create({name: 'Salamance', typeId: dragon.id}),
+    Pokemon.create({name: 'Electravire', typeId: electric.id}),
+    Pokemon.create({name: 'Charizard', typeId: fire.id}),
+    Pokemon.create({name: 'Mewtwo', typeId: psychic.id}),
+    Pokemon.create({name: 'Machamp', typeId: fighting.id}),
+    Pokemon.create({name: 'Gangar', typeId: ghost.id}),
+    Pokemon.create({name: 'Butterfree', typeId: bug.id}),
+    Pokemon.create({name: 'Infernape', typeId: fire.id}),
+    Pokemon.create({name: 'Beartic', typeId: ice.id}),
+    Pokemon.create({name: 'Golem', typeId: rock.id}),
+    Pokemon.create({name: 'Lanturn', typeId: water.id }),
+    Pokemon.create({name: 'Zarrena', typeId: grass.id }),
+    Pokemon.create({name: 'Volcarona', typeId: bug.id }),
+    Pokemon.create({name: 'Swampert', typeId: water.id })
   ])
 
 };

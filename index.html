@@ -26,15 +26,23 @@
             types: []
           }
         }
-        anync componentDidMount(){
-          const responses = await Promise.all([fetch('/api/pokemon'), fetch('/api/type')]);
-          const [ pokemons, types ] = await Promise.all(responses.map(response => response.json()));
-          this.setState({pokemons, types})
+        async componentDidMount(){
+          const responses = await Promise.all([
+            axios.get('/api/pokemon'),
+            axios.get('/api/type')
+          ]);
+          this.setState({pokemons: responses[0].data, types: responses[1].data})
         }
         render(){
           const {pokemons, types} = this.state;
           return (
-            <hr />
+            <div>
+              <ul>
+                {
+                  pokemons.map( pokemon => <li key={pokemon.id}>{pokemon.name}</li>)
+                }
+              </ul>
+            </div>
           )
         }
       }
